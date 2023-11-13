@@ -3,7 +3,7 @@ This repository is the project of STHNet.
 
 ### Overview
 
-![MMUC_framework]()
+![STMNet Framework](STHNet_framework.png)
 
 ### Requirements
 
