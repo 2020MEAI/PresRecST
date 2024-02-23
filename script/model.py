@@ -9,9 +9,9 @@ import torch.nn
 import torch
 
 
-class STHNet(torch.nn.Module):
+class PresRecST(torch.nn.Module):
     def __init__(self, batch_size, embedding_dim):
-        super(STHNet, self).__init__()
+        super(PresRecST, self).__init__()
         self.batch_size = batch_size
         self.embedding_dim = embedding_dim
         self.sym_embedding = torch.nn.Embedding(1801, self.embedding_dim)
