@@ -1,5 +1,5 @@
-# STHNet
-This repository is the project of STHNet.
+# PresRecST
+This repository is the project of PresRecST.
 
 ### Overview
 
