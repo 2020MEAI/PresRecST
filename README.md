@@ -16,22 +16,12 @@ Fig1. Framework of PresRecST. The model takes the knowledge embedding matrices o
 input, and combines them with the residual-like neural network for recommending syndromes(SDM), treatment methods(TMM) and
 herbs(HRM) progressively.
 
-## 3. Requirements
-
-- Python 3.6.5
-- PyTorch 1.6.0
-
-## 4. Usage
-
-```
-python main.py
-```
-## 5. Data Availability
+## 3. Data Availability
 
 Due to the sensitive nature of TCM medical data, we have encrypted the currently TCM-Lung dataset. Please contact 
 x_dong@bjtu.edu.cn to obtain the decryption password.
 
-## 6. Contact
+## 4. Contact
 
 <b>If you have better suggestions or questions about our work, please contact us: <a>x_dong@bjtu.edu.cn</a>. </b> 
 
