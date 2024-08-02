@@ -21,7 +21,11 @@ herbs(HRM) progressively.
 Due to the sensitive nature of TCM medical data, we have encrypted the currently TCM-Lung dataset. Please contact 
 x_dong@bjtu.edu.cn to obtain the decryption password.
 
-## 4. Contact
+## 4. Citing
+If you find PresRecST useful for your research, please consider citing the following paper:
+Dong X, Zhao C, Song X, Zhang L, Liu Y, Wu J, Xu Y, Xu N, Liu J, Yu H, Yang K, Zhou X. PresRecST: a novel herbal prescription recommendation algorithm for real-world patients with integration of syndrome differentiation and treatment planning. J Am Med Inform Assoc. 2024 May 20;31(6):1268-1279. 
+
+## 5. Contact
 
 <b>If you have better suggestions or questions about our work, please contact us: <a>x_dong@bjtu.edu.cn</a>. </b> 
 
