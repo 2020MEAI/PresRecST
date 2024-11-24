@@ -31,7 +31,7 @@ The relevant data required by the model are uniformly placed in the "data" folde
 It focuses on pulmonary diseases and comprises 14,948 entries after processing. Considering the clinical nature of the data, despite de-identification efforts, its clinical characteristics were still taken into account. Therefore, only 4,484 entries are made publicly available in this project. 
 Each entry includes symptoms, syndromes, therapeutic methods, and TCM prescriptions in the form of IDs, along with a mapping table providing the corresponding names for these IDs. 
 
-**To ensure data security, we have encoded the data (i.e., each symptom/syndrome/treatment method/herb has been converted into an ID). If you require the full names for research purposes, please contact us via email: <a>x_dong@bjtu.edu.cn</a>.**
+**To ensure data security, we have encoded the TCM-Lung dataset (i.e., each symptom/syndrome/treatment method/herb has been converted into an ID). If you require the full names for research purposes, please contact us via email: <a>x_dong@bjtu.edu.cn</a>.**
 
 ### (2) main code
 The python script file of the model is shown in this project, including the following files:
