@@ -18,11 +18,16 @@ herbs(HRM) progressively.
 
 ## 3. Data Availability
 
-Due to the sensitive nature of TCM medical data, we have encrypted the currently TCM-Lung dataset. Please contact 
-x_dong@bjtu.edu.cn to obtain the decryption password.
+The datasets used in this study include the following two sources:  
+1. **TCM-PD [Yao et al., TKDE 2018]**: A widely utilized TCM prescription dictionary dataset, frequently employed in research on TCM prescription recommendation.  
+2. **TCM-Lung [constructed in this study]**: A clinical TCM dataset focused on lung diseases.  
 
-## 4. Citing
+## 4. Usage
+xx
+
+## 5. Citing
 If you find PresRecST useful for your research, please consider citing the following paper:
+
 Dong X, Zhao C, Song X, Zhang L, Liu Y, Wu J, Xu Y, Xu N, Liu J, Yu H, Yang K, Zhou X. PresRecST: a novel herbal prescription recommendation algorithm for real-world patients with integration of syndrome differentiation and treatment planning. J Am Med Inform Assoc. 2024 May 20;31(6):1268-1279. 
 
 ## 5. Contact
