@@ -27,7 +27,11 @@ $ pip install -r requirements.txt
 ### (1) dataset
 The relevant data required by the model are uniformly placed in the "data" folder. This folder contains the following two data files:
 <li><b>prescript_1195.csv</b>: This dataset is derived from the work of [Yao et al., TKDE 2018], consisting of 33,765 entries after processing (termed TCM-PD in this study). This dataset was utilized for subsequent research on TCM prescription recommendation.
-<li><b>TCM_Lung.xlsx</b>: This dataset was constructed in this study and originates from the First Affiliated Hospital of Henan University of Chinese Medicine (FAH-HUCM). It focuses on pulmonary diseases and comprises 14,948 entries after processing. Considering the clinical nature of the data, despite de-identification efforts, its clinical characteristics were still taken into account. Therefore, only 4,484 entries are made publicly available in this project. Each entry includes symptoms, syndromes, therapeutic methods, and TCM prescriptions in the form of IDs, along with a mapping table providing the corresponding names for these IDs.
+<li><b>TCM_Lung.xlsx</b>: This dataset was constructed in this study and originates from the First Affiliated Hospital of Henan University of Chinese Medicine (FAH-HUCM). 
+It focuses on pulmonary diseases and comprises 14,948 entries after processing. Considering the clinical nature of the data, despite de-identification efforts, its clinical characteristics were still taken into account. Therefore, only 4,484 entries are made publicly available in this project. 
+Each entry includes symptoms, syndromes, therapeutic methods, and TCM prescriptions in the form of IDs, along with a mapping table providing the corresponding names for these IDs. 
+
+**To ensure data security, we have encoded the data (i.e., each symptom/syndrome/treatment method/herb has been converted into an ID). If you require the full names for research purposes, please contact us via email: <a>x_dong@bjtu.edu.cn</a>.**
 
 ### (2) main code
 The python script file of the model is shown in this project, including the following files:
