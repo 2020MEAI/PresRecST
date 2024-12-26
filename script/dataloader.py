@@ -48,7 +48,7 @@ def process_dataset_tcmpd(dev_ratio, test_ratio, batch_size):
 
 
 def process_dataset_lung(config, seed, device):
-    data_file = 'Data/TCM_Lung.xlsx'
+    data_file = 'data/TCM_Lung.xlsx'
     tcm_lung = pd.read_excel(data_file)
     data_amount = tcm_lung.shape[0]
 
