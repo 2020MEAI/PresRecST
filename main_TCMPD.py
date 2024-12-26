@@ -8,15 +8,17 @@ import torch
 import numpy as np
 import sys
 import time
+import os
 
 
-def main(): 
+def main():
     # params
     params = Para(
         lr=1e-4, rec=7e-3, drop=0.0, batch_size=32, epoch=100, dev_ratio=0.0, test_ratio=0.2, embedding_dim=64,
         alpha1=1.0, alpha2=1.0, alpha3=1.0
     )
     out_name = 'PresRecST_TCMPD'
+    os.makedirs("log", exist_ok=True)
     sys.stdout = Logger(f'log/{out_name}_log.txt')
 
     print(f'/---- {out_name} start -----/')
@@ -32,13 +34,14 @@ def main():
 
     # data & settings
     print('-- Data Processing --')
-    x_train, x_test, train_loader, test_loader, data_len = process_dataset_tcmpd(params.dev_ratio, params.test_ratio, params.batch_size)
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print('device: ', device)
+    x_train, x_test, train_loader, test_loader, data_len = process_dataset_tcmpd(params.dev_ratio, params.test_ratio, params.batch_size, device)
     print('-- Parameter Setting --')
     print("lr:", params.lr, "rec:", params.rec, "dropout:", params.drop, "batch_size:",
           params.batch_size, "epoch:", params.epoch, "dev_ratio:", params.dev_ratio, "test_ratio:", params.test_ratio)
     model = PresRecST4PD(params.batch_size, params.embedding_dim, data_len)
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print('device: ', device)
+    model = model.to(device)
     criterion = torch.nn.BCEWithLogitsLoss(reduction="sum")
     optimizer = torch.optim.Adam(model.parameters(), lr=params.lr, weight_decay=params.rec)
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=7, gamma=0.8)
@@ -48,6 +51,7 @@ def main():
     test_result = training_and_testing(
         model, x_train, x_test, train_loader, test_loader, params, optimizer, criterion, scheduler
     )
+    os.makedirs("result", exist_ok=True)
     test_result.to_excel(f"result/{out_name}_result.xlsx", index=False)
 
     print(time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime()))
