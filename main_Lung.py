@@ -53,6 +53,7 @@ def main():
     test_result = training_and_testing_lung4(
         model, x_train, x_test, train_loader, test_loader, params, optimizer, criterion, scheduler
     )
+    os.makedirs("result", exist_ok=True)
     test_result.to_excel(f"result/herb_result_{add_name}.xlsx", index=False)
 
     print(time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime()))
