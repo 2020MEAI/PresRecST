@@ -10,7 +10,7 @@ treatment process of real-world syndrome differentiation and treatment determina
 
 ## 2. Overview
 
-![PresRecST Framework](PresRecST_framework.png)
+![PresRecST Framework](./fig/PresRecST_framework.png)
 
 Fig1. Framework of PresRecST. The model takes the knowledge embedding matrices of SDTKG and the patient’s symptom set as
 input, and combines them with the residual-like neural network for recommending syndromes(SDM), treatment methods(TMM) and
