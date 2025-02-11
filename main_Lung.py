@@ -8,9 +8,10 @@ import torch
 import numpy as np
 import sys
 import time
+import os
 
 
-def main(): 
+def main():
     # params
     params = Para(
         lr=1e-4, rec=7e-3, drop=0.0, batch_size=32, epoch=100, dev_ratio=0.0, test_ratio=0.2, embedding_dim=64,
@@ -18,6 +19,7 @@ def main():
     )
     out_name = 'PresRecST_Lung'
     add_name = 'Lung'
+    os.makedirs("log", exist_ok=True)
     sys.stdout = Logger(f'log/{out_name}_{add_name}_log.txt')
 
     print('/---- PresRecST start -----/')
@@ -39,6 +41,7 @@ def main():
     print("lr:", params.lr, "rec:", params.rec, "dropout:", params.drop, "batch_size:",
           params.batch_size, "epoch:", params.epoch, "dev_ratio:", params.dev_ratio, "test_ratio:", params.test_ratio)
     model = PresRecST4Lung(params.batch_size, params.embedding_dim, data_len)
+    model = model.to(device)
 
     print('device: ', device)
     criterion = torch.nn.BCEWithLogitsLoss(reduction="sum")
@@ -50,6 +53,7 @@ def main():
     test_result = training_and_testing_lung4(
         model, x_train, x_test, train_loader, test_loader, params, optimizer, criterion, scheduler
     )
+    os.makedirs("result", exist_ok=True)
     test_result.to_excel(f"result/herb_result_{add_name}.xlsx", index=False)
 
     print(time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime()))

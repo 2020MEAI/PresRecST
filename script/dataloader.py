@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 
 
-def process_dataset_tcmpd(dev_ratio, test_ratio, batch_size):
+def process_dataset_tcmpd(dev_ratio, test_ratio, batch_size, device):
     # load data
     tcm_lung = pd.read_csv('data/prescript_1195.csv')
     data_amount = tcm_lung.shape[0]
@@ -38,6 +38,10 @@ def process_dataset_tcmpd(dev_ratio, test_ratio, batch_size):
         herb_indexes = [x-390 for x in herb_indexes if 390 <= x < 1195]
         herb_array[i, herb_indexes] = 1
 
+    # Convert arrays to torch tensors and move to the specified device
+    sym_array = torch.tensor(sym_array, device=device, dtype=torch.float32)
+    herb_array = torch.tensor(herb_array, device=device, dtype=torch.float32)
+
     train_dataset = PreDatasetPTM2(sym_array[x_train], herb_array[x_train])
     test_dataset = PreDatasetPTM2(sym_array[x_test], herb_array[x_test])
 
@@ -48,7 +52,7 @@ def process_dataset_tcmpd(dev_ratio, test_ratio, batch_size):
 
 
 def process_dataset_lung(config, seed, device):
-    data_file = 'Data/TCM_Lung.xlsx'
+    data_file = 'data/TCM_Lung.xlsx'
     tcm_lung = pd.read_excel(data_file)
     data_amount = tcm_lung.shape[0]
 
