@@ -56,6 +56,9 @@ The result file contains four columns:
 ## 5. Citation and Contact
 
 If you find PresRecST useful for your research, please consider citing the following paper:
+
+Dong X, Zhao C, Song X, Zhang L, Liu Y, Wu J, Xu Y, Xu N, Liu J, Yu H, Yang K, Zhou X. PresRecST: a novel herbal prescription recommendation algorithm for real-world patients with integration of syndrome differentiation and treatment planning[J]. Journal of the American Medical Informatics Association, 2024, 31(6): 1268-1279.
+
 ```
 @article{dong2024presrecst,
   title={PresRecST: a novel herbal prescription recommendation algorithm for real-world patients with integration of syndrome differentiation and treatment planning},
